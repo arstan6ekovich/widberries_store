@@ -1,23 +1,7 @@
-# Python related
+.env
+env/
+.idea/
 __pycache__/
-*.py[cod]
-*.so
-*.egg-info/
-*.egg
-*.log
-
-# Virtual environment
+*.pyc
 venv/
 .venv/
-
-# Environment variables file
-.env
-
-# Django stuff:
-db.sqlite3
-/media/
-staticfiles/
-
-# IDE files
-.idea/
-.vscode/
