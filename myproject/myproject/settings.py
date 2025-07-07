@@ -150,6 +150,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
     'https://mar4ik.dev',
+    "https://widberries-67982969a6ca.herokuapp.com"
 ]
 
 
