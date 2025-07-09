@@ -1,0 +1,27 @@
+name: Daily Auto Commit with Date
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # 08:00 Бишкек
+    - cron: '0 6 * * *'   # 12:00
+    - cron: '0 8 * * *'   # 14:00
+    - cron: '0 10 * * *'  # 16:00
+    - cron: '0 12 * * *'  # 18:00
+    - cron: '0 14 * * *'  # 20:00
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update date in file
+        run: |
+          echo "Last update: $(date '+%Y-%m-%d %H:%M:%S')" > update.txt
+          git config user.name "Daily Bot"
+          git config user.email "bot@example.com"
+          git add update.txt
+          git commit -m "Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
